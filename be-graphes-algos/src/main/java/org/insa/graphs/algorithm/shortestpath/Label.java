@@ -1,4 +1,7 @@
-package org.insa.graphs.model;
+package org.insa.graphs.algorithm.shortestpath;
+
+import org.insa.graphs.model.Arc;
+import org.insa.graphs.model.Node;
 
 public class Label implements Comparable<Label> {
 
@@ -23,6 +26,19 @@ public class Label implements Comparable<Label> {
 	public double getCout() {
 		return cout;
 	}
+
+
+
+	public Node getPere() {
+		return this.pere;
+	}
+
+
+
+	//Définition de la méthode getTotalCost
+	public double getTotalCost() {
+		return this.getCout();
+	}
 	
 	public Node getSommet() {
 		return sommet;
@@ -36,11 +52,6 @@ public class Label implements Comparable<Label> {
 		return this.arc;
 	}
 	
-	public Node getPere() {
-		return this.pere;
-	}
-	
-	
 	//Setters
 	public void setCout(double cout) {
 		this.cout=cout;
@@ -50,14 +61,18 @@ public class Label implements Comparable<Label> {
 		this.marque= true;
 	}
 
+//	//Redéfinition méthode ToString
+//	public String toString(Label x) {
+//		return ("Label ")
+//	}
 
 	// Ajout du compare to, un label est "supérieur" qu'un autre si son cout est supérieur
 	@Override
 	public int compareTo(Label o) {
-		if (this.cout> o.cout) {
+		if (this.getTotalCost()> o.getTotalCost()) {
 			return 1;
 		}
-		if (this.cout<o.cout) {
+		if (this.getTotalCost()<o.getTotalCost()) {
 			return -1;
 		}
 		else {
