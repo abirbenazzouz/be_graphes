@@ -27,18 +27,10 @@ public class Label implements Comparable<Label> {
 		return cout;
 	}
 
-
-
 	public Node getPere() {
 		return this.pere;
 	}
 
-
-
-	//Définition de la méthode getTotalCost
-	public double getTotalCost() {
-		return this.getCout();
-	}
 	
 	public Node getSommet() {
 		return sommet;
@@ -52,6 +44,12 @@ public class Label implements Comparable<Label> {
 		return this.arc;
 	}
 	
+
+	//Définition de la méthode getTotalCost
+	public double getTotalCost() {
+		return this.getCout();
+	}
+	
 	//Setters
 	public void setCout(double cout) {
 		this.cout=cout;
@@ -61,12 +59,8 @@ public class Label implements Comparable<Label> {
 		this.marque= true;
 	}
 
-//	//Redéfinition méthode ToString
-//	public String toString(Label x) {
-//		return ("Label ")
-//	}
 
-	// Ajout du compare to, un label est "supérieur" qu'un autre si son cout est supérieur
+	// Ajout du compare to, un label est "supérieur" à un autre si son cout est supérieur
 	@Override
 	public int compareTo(Label o) {
 		if (this.getTotalCost()> o.getTotalCost()) {

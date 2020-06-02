@@ -329,7 +329,6 @@ public class Path {
         for (Arc arc : this.arcs) {
         	longueur+=arc.getLength();
         }
-
         return longueur;
     }
 
@@ -343,6 +342,7 @@ public class Path {
      * 
      * Need to be implemented.
      */
+    
     public double getTravelTime(double speed) {
     	double temps =0;
     	// On parcourt les arcs et on ajoute leurs durées à la durée totale du chemin
@@ -360,6 +360,7 @@ public class Path {
      * 
      * Need to be implemented.
      */
+    
     public double getMinimumTravelTime() {
         double tempsMin=0;
         for (Arc arc : this.arcs) {
